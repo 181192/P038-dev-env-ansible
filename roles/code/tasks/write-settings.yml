@@ -1,0 +1,21 @@
+---
+- name: create config directory
+  file:
+    path: '~/{{ visual_studio_code_config_path }}'
+    state: directory
+    mode: 'u=rwx,go=r'
+  loop: '{{ visual_studio_code_extensions }}'
+
+- name: create settings directory
+  file:
+    path: '~/{{ visual_studio_code_config_path }}/User'
+    state: directory
+    mode: 'u=rwx,go='
+
+- name: write settings
+  template:
+    src: settings.json.j2
+    dest: '~/{{ visual_studio_code_config_path }}/User/settings.json'
+    force: no
+    mode: 'u=rw,go='
+  when: "visual_studio_code_settings is defined and visual_studio_code_settings not in ({}, '', None, omit)"
