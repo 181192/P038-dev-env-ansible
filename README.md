@@ -1,7 +1,29 @@
 # Development Environment with Ansible
 
+## Testing
+
+[Molecule](https://molecule.readthedocs.io/en/stable/) is used for E2E testing.
+
+```
+pip install molecule
+```
+
+To run E2E test go to `roles/<role>` and run:
+
+```
+molecule test
+```
+
+## Developing
+
+To add a new role go to the `roles` and run
+
+```
+molecule init role -r my-new-role
+```
 
 
+### OS flags
 
 RHEL/CentOS
 ```
