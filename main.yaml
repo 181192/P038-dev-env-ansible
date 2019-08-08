@@ -1,0 +1,140 @@
+---
+- name: dev-env-ansible
+  hosts: localhost
+
+  roles:
+    - role: code
+      visual_studio_code_extensions:
+        - adamhartford.vscode-base64
+        - bbenoist.vagrant
+        - bierner.markdown-preview-github-styles
+        - codezombiech.gitignore
+        - dbaeumer.vscode-eslint
+        - DotJoshJohnson.xml
+        - eamodio.gitlens
+        - emmanuelbeziat.vscode-great-icons
+        - esbenp.prettier-vscode
+        - formulahendry.auto-rename-tag
+        - formulahendry.azure-storage-explorer
+        - formulahendry.vscode-mysql
+        - heptio.jsonnet
+        - humao.rest-client
+        - jebbs.plantuml
+        - mads-hartmann.bash-ide-vscode
+        - mauve.terraform
+        - mermade.openapi-lint
+        - ms-azuretools.vscode-azurestorage
+        - ms-azuretools.vscode-docker
+        - ms-kubernetes-tools.vscode-aks-tools
+        - ms-kubernetes-tools.vscode-kubernetes-tools
+        - ms-python.python
+        - ms-vscode.azure-account
+        - ms-vscode.Go
+        - ms-vsliveshare.vsliveshare
+        - msjsdiag.debugger-for-chrome
+        - octref.vetur
+        - quicktype.quicktype
+        - redhat.java
+        - redhat.vscode-xml
+        - redhat.vscode-yaml
+        - rokoroku.vscode-theme-darcula
+        - shakram02.bash-beautify
+        - steoates.autoimport
+        - sysoev.language-stylus
+        - thisismanta.stylus-supremacy
+        - VisualStudioExptTeam.vscodeintellicode
+        - vscjava.vscode-java-debug
+        - vscjava.vscode-java-dependency
+        - vscjava.vscode-java-pack
+        - vscjava.vscode-java-test
+        - wengerk.highlight-bad-chars
+        - wholroyd.jinja
+        - wix.vscode-import-cost
+        - zeithaste.cursorCharCode
+
+      visual_studio_code_settings: {
+        "workbench.colorTheme": "Darcula",
+        "workbench.startupEditor": "newUntitledFile",
+        "workbench.iconTheme": "vscode-great-icons",
+        "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+        "editor.fontLigatures": true,
+        "editor.tabSize": 2,
+        "editor.rulers": [110],
+        "files.trimTrailingWhitespace": true,
+        "emmet.includeLanguages": {
+          "javascript": "javascript"
+        },
+        "emmet.syntaxProfiles": {
+          "vue-html": "html",
+          "vue": "html"
+        },
+        "javascript.updateImportsOnFileMove.enabled": "always",
+        "vetur.completion.autoImport": true,
+        "vetur.format.defaultFormatter.html": "prettier",
+        "vetur.format.defaultFormatter.css": "prettier",
+        "vetur.format.defaultFormatter.postcss": "prettier",
+        "vetur.format.defaultFormatter.scss": "prettier",
+        "vetur.format.defaultFormatter.less": "prettier",
+        "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
+        "vetur.format.defaultFormatter.js": "prettier",
+        "vetur.format.defaultFormatter.ts": "prettier",
+        "vetur.format.defaultFormatterOptions": {
+          "prettier": {
+            "semi": false,
+            "singleQuote": true
+          },
+          "prettyhtml": {
+            "printWidth": 100,
+            "singleQuote": false
+          }
+        },
+        "eslint.validate": ["javascript", "javascriptreact", "vue"],
+        "prettier.singleQuote": true,
+        "prettier.semi": false,
+        "prettier.disableLanguages": ["vue"],
+        "stylusSupremacy.insertBraces": false,
+        "stylusSupremacy.insertColons": false,
+        "stylusSupremacy.insertSemicolons": false,
+        "window.zoomLevel": 0,
+        "files.exclude": {
+          "**/.classpath": true,
+          "**/.project": true,
+          "**/.settings": true,
+          "**/.factorypath": true
+        },
+        "editor.formatOnSave": false,
+        "editor.suggestSelection": "first",
+        "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+        "window.titleBarStyle": "custom",
+        "javascript.implicitProjectConfig.experimentalDecorators": true,
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[yaml]": {
+          "editor.defaultFormatter": "redhat.vscode-yaml"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[xml]": {
+          "editor.defaultFormatter": "redhat.vscode-xml"
+        },
+        "[html]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "breadcrumbs.enabled": true,
+        "editor.renderWhitespace": "none",
+        "editor.renderControlCharacters": false,
+        "liveshare.featureSet": "insiders",
+        "extensions.ignoreRecommendations": true,
+        "go.formatTool": "goimports",
+        "files.associations": {
+          "Dockerfile*":"dockerfile",
+          "Vagrantfile": "ruby"
+        },
+        "python.jediEnabled": false,
+      }
