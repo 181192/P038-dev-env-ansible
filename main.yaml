@@ -2,7 +2,14 @@
 - name: dev-env-ansible
   hosts: localhost
 
+  pre_tasks:
+    - name: Install python for Ansible
+      become: yes
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python3) && update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+      changed_when: False
+
   roles:
+    - jetbrains-toolbox
     - role: code
       visual_studio_code_extensions:
         - adamhartford.vscode-base64
