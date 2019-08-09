@@ -1,5 +1,35 @@
 ---
 - name: Converge
   hosts: all
+
+  pre_tasks:
+    - name: Install python for Ansible
+      become: yes
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python3) && update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+      changed_when: False
+
+    - name: install dependencies (apt)
+      become: yes
+      apt:
+        name:
+          - python3-pip
+          - python3-setuptools
+          - python3-crypto
+          - openssl
+          - libssl-dev
+        state: present
+
+    - name: install requirements
+      become: yes
+      pip:
+        name:
+        - jmespath
+        - crypto
+        - certifi
+        - urllib3
+        - pyopenssl
+        - ndg-httpsclient
+        - pyasn1
+
   roles:
     - role: jetbrains-toolbox
