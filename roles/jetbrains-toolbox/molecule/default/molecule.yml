@@ -10,6 +10,12 @@ platforms:
     image: ubuntu:19.04
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      interpreter_python: /usr/bin/python3
+      callback_whitelist: profile_tasks
+    ssh_connection:
+      pipelining: True
   lint:
     name: ansible-lint
 verifier:
