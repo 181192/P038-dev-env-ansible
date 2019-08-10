@@ -1,0 +1,8 @@
+---
+- name: install dependencies (dnf)
+  become: yes
+  dnf:
+    name:
+      - libX11-xcb
+      - which
+    state: present

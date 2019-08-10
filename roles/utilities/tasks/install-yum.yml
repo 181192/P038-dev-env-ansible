@@ -1,0 +1,6 @@
+---
+- name: install dependencies (yum)
+  become: yes
+  yum:
+    name: which
+    state: present

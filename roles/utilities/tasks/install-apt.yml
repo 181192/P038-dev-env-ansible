@@ -1,0 +1,29 @@
+---
+- name: install dependencies (apt)
+  become: yes
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - cmake
+      - cron
+      - curl
+      - direnv
+      - gconf2
+      - git
+      - glances
+      - gnupg2
+      - graphviz
+      - tar
+      - htop
+      - libasound2
+      - libgtk2.0-0
+      - libxss1
+      - openssl
+      - pkg-config
+      - software-properties-common
+      - tree
+      - unzip
+      - watch
+      - wget
+    state: present
