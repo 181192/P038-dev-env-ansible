@@ -1,5 +1,23 @@
 # Development Environment with Ansible
 
+## Install / setup
+
+```
+ansible-playbook main.yaml --ask-become-pass
+
+# With debug (-v -vv -vvv -vvvv)
+ansible-playbook main.yaml --ask-become-pass -vvvv
+```
+
+Install with tags:
+```
+ansible-playbook main.yaml --tags "utilities,code" --ask-become-pass -vvvv
+
+ansible-playbook main.yaml --tags utilities --ask-become-pass -vvvv
+
+ansible-playbook main.yaml --skip-tags "code" --ask-become-pass -vvvv
+```
+
 ## Testing
 
 [Molecule](https://molecule.readthedocs.io/en/stable/) is used for E2E testing.
