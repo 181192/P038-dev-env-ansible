@@ -9,8 +9,12 @@
       changed_when: False
 
   roles:
-    - jetbrains-toolbox
+    - role: utilities
+      tags: utilities
+    - role: jetbrains-toolbox
+      tags: jetbrains-toolbox
     - role: code
+      tags: code
       visual_studio_code_extensions:
         - adamhartford.vscode-base64
         - bbenoist.vagrant
@@ -54,6 +58,7 @@
         - vscjava.vscode-java-dependency
         - vscjava.vscode-java-pack
         - vscjava.vscode-java-test
+        - vscoss.vscode-ansible
         - wengerk.highlight-bad-chars
         - wholroyd.jinja
         - wix.vscode-import-cost
