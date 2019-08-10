@@ -35,6 +35,7 @@
     - name: Download JetBrains Toolbox
       get_url:
         url: "{{ jetbrains_toolbox_available_releases.json | json_query(jetbrains_toolbox_download_query) | first }}"
+        validate_certs: no
         dest: "{{ jetbrains_toolbox_download_dir.path }}/jetbrains_toolbox.tar.gz"
         checksum: "sha256:{{ lookup('url', jetbrains_toolbox_available_releases.json | json_query(jetbrains_toolbox_checksum_link) | first) | regex_search('[A-Fa-f0-9]{64}') }}"
       vars:
