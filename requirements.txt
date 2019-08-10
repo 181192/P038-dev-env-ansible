@@ -1,0 +1,7 @@
+pip
+ansible
+urllib3
+pyopenssl
+ndg-httpsclient
+pyasn1
+jmespath
