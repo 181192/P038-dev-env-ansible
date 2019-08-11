@@ -1,0 +1,6 @@
+---
+azure_package_name: azure-cli
+
+yum_repo_name: "{{ azure_package_name }}"
+yum_repo_description: Microsoft Azure CLI
+yum_repo_baseurl: https://packages.microsoft.com/yumrepos/azure-cli

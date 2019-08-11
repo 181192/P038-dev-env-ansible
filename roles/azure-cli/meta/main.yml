@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: Kristoffer-Andre Kalliainen
+  description: Install Azure CLI
+  company: Stacc AS
+  license: MIT
+
+  min_ansible_version: 2.6
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - disco
+    - name: Fedora
+      versions:
+        - 28
+
+  galaxy_tags:
+    - azure-cli
+    - development
+
+dependencies: []

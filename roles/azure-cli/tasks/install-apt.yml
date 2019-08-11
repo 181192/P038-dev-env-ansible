@@ -1,0 +1,31 @@
+---
+- name: Install the dependecies (apt)
+  become: yes
+  apt:
+    name:
+      - ca-certificates
+      - curl
+      - apt-transport-https
+      - lsb-release
+      - gnupg
+    update_cache: yes
+
+- name: Import the APT repo key (apt)
+  become: yes
+  shell: |
+    curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
+    gpg --dearmor | \
+    sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+
+- name: Create the APT repository (apt)
+  become: yes
+  apt_repository:
+    repo: "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ {{ansible_distribution_release}} main"
+    filename: "{{ azure_package_name }}"
+    state: present
+
+- name: Install the application package (apt)
+  become: yes
+  apt:
+    name: "{{ azure_package_name }}"
+    update_cache: yes

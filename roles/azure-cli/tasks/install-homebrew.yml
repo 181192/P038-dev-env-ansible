@@ -1,0 +1,6 @@
+---
+- name: Install the application package (homebrew)
+  homebrew:
+    name: "{{ azure_package_name }}"
+    state: latest
+    update_homebrew: yes

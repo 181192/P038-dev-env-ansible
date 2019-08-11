@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: azure-cli
+
+  post_tasks:
+    - name: install which
+      package:
+        name: which
+        state: present
+      when: ansible_pkg_mgr in ('yum', 'dnf')
