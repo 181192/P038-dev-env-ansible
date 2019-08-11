@@ -1,5 +1,14 @@
 # Development Environment with Ansible
 
+## Requirements
+
+```
+git clone <repo's url>
+cd <repo's dir>
+direnv allow
+pip install -r requirements.txt
+```
+
 ## Install / setup
 
 ```
