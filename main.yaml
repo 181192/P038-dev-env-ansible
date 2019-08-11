@@ -9,6 +9,8 @@
       changed_when: False
 
   roles:
+    - role: azure-cli
+      tags: azure-cli
     - role: utilities
       tags: utilities
     - role: jetbrains-toolbox
