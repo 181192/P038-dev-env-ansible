@@ -3,9 +3,14 @@
 ## Requirements
 
 ```
-git clone <repo's url>
-cd <repo's dir>
+sudo apt-get install gcc python3-dev
+
+git clone https://github.com/181192/P038-dev-env-ansible
+cd P038-dev-env-ansible
+
+./setup-direnv.sh
 direnv allow
+
 pip install -r requirements.txt
 ```
 
