@@ -54,6 +54,16 @@ To add a new role go to the `roles` and run
 molecule init role -r my-new-role
 ```
 
+## Updating requirements.txt
+
+Using `pur` updating dependecies is a breeze. `pur` will only update the requirements.txt without distrupting your python env.
+
+To actually install the changes use `pip install -r requirements.txt`, be aware of dependencies conflicts.
+
+```
+pur -r requirements.txt
+pip install -r requirements.txt
+```
 
 ### OS flags
 
