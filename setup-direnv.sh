@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [ "$EUID" -ne 0 ]
 then echo -e "\e[31mPlease run as root\e[0m"
     exit
