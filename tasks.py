@@ -12,11 +12,14 @@ def init(ctx, force_reinstall=False):
 
 @task(help={
     'debug': 'append -vvvv debug flag on ansible-controller',
+    'ask-become-pass': 'ask for privilege escalation password',
     'tags': 'a list of playbook tags to run'
 })
-def run(ctx, debug=False, tags=[]):
+def run(ctx, debug=False, ask_become_pass=True, tags=[]):
     """Run ansible playbook"""
     cmd = "ansible-playbook main.yaml"
+    if ask_become_pass:
+        cmd += " --ask-become-pass"
     if debug:
         cmd += " -vvvv"
     if tags:
