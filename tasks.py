@@ -4,6 +4,8 @@ from invoke import task
 @task
 def init(ctx, force_reinstall=False):
     """Check pre-requirements"""
+    ctx.run("bash workaround-python3-apt.sh", pty=True)
+
     cmd = "pip install -r requirements.txt"
     if force_reinstall:
         cmd + " --force-reinstall"
