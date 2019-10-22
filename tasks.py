@@ -19,7 +19,7 @@ def init(ctx, force_reinstall=False):
 })
 def run(ctx, debug=False, ask_become_pass=True, tags=[]):
     """Run ansible playbook"""
-    cmd = "ansible-playbook main.yaml"
+    cmd = "ansible-playbook main.yml"
     if ask_become_pass:
         cmd += " --ask-become-pass"
     if debug:
