@@ -1,0 +1,33 @@
+---
+# tasks file for terraform
+- name: Get latest terraform version id
+  uri:
+    url: 'https://checkpoint-api.hashicorp.com/v1/check/terraform'
+    method: GET
+    status_code: "200"
+    timeout: 10
+    validate_certs: False
+  register: release
+
+- name: Register terraform version
+  set_fact:
+    version: "{{ release.json | json_query('current_version') }}"
+
+- name: Terraform is present
+  get_url:
+    url: 'https://releases.hashicorp.com/terraform/{{ version }}/terraform_{{ version }}_linux_amd64.zip'
+    dest: '/tmp/terraform.zip'
+    validate_certs: False
+
+- name: Unarchive terraform.zip
+  become: yes
+  unarchive:
+    src: /tmp/terraform.zip
+    dest: /usr/local/bin
+
+- name: Changing perm of "/usr/local/bin/terraform", adding "u+x"
+  become: yes
+  file: dest=/usr/local/bin/terraform mode=u+x
+
+- name: Print terraform version
+  command: terraform --version
