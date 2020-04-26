@@ -18,9 +18,9 @@ echo -e "\e[93mDownloading python3-apt sources\e[0m"
 apt-get download python3-apt
 dpkg -x python3-apt*.deb python3-apt
 
-cp -r python3-apt/usr/lib/python3/dist-packages/* ../.direnv/python-$python_version/lib/python3.7/site-packages
+cp -r python3-apt/usr/lib/python3/dist-packages/* ../.direnv/python-$python_version/lib/python3*/site-packages
 
-cd ../.direnv/python-$python_version/lib/python3.7/site-packages
+cd ../.direnv/python-$python_version/lib/python3*/site-packages
 
 mv apt_pkg.cpython*.so apt_pkg.so
 mv apt_inst.cpython*.so apt_inst.so
